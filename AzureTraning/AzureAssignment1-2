@@ -1,0 +1,40 @@
+
+      Azure Power Shell Commands:
+
+	
+•	TO ENABLE THE AZURE RM
+COMMAND:
+PS C:\Windows\system32> Enable-AzureRmAlias
+
+•	CREATE A RESOURCE GROUP IN POWERSHELL RM
+COMMAND:
+PS C:\Windows\system32>  New-AzureRmResourceGroup -Name ResourceGroup1 -Location "South Central US"
+
+•	CREATE A VIRTUAL MACHINE IN POWERSHELL RM
+COMMAND:
+PS C:\Windows\system32> New-AzureRmVm -ResourceGroupName "ResourceGroup1" -Name "VaralikaVM" -Location "East US" -VirtualNetworkName "myVnet" -SubnetName "mySubnet" -SecurityGroupName "myNetworkSecurityGroup" -PublicIpAddressName "myPublicIpAddress" -OpenPorts 80,3389
+
+
+•	CREATE A STORAGE ACCOUNT IN POWERSHELL RM
+COMMAND:
+PS C:\Windows\system32> New-AzureRmStorageAccount -ResourceGroupName ResourceGroup1 -AccountName varalikastorageaccount -Location westus -SkuName Standard_GRS
+
+      Azure Power Shell Commands:
+•	CREATE A RESOURCE GROUP USING CLI:
+COMMAND:
+az group create --name ResourceGroup2 --location "westus"
+
+
+•	CREATE A VIRTUAL MACHINE USING CLI:
+COMMAND:
+az vm create \
+> --resource-group ResourceGroup2 \
+> --name VMCLI \
+> --image win2016datacenter \
+> --admin-username Varalika8797 \
+> --admin-password Abc0123456789
+
+•	CREATE A STORAGE ACCOUNT USING CLI:
+COMMAND:
+varalika_bishnoi@Azure:~$ az storage account create -n vbstorageaccountcli -g ResourceGroup2 -l westus --sku Standard_LRS
+
